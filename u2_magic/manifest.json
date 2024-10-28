@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "U2 Magic Form Auto-Adjust",
+    "version": "1.0",
+    "description": "Automatically adjusts the form fields for convenience",
+    "permissions": [
+        "https://u2.dmhy.org/",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
